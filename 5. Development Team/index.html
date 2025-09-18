@@ -70,21 +70,25 @@
 
         <script>
 
-            const savedUser = JSON.parse(localStorage.getItem("userData"));
+            const users = JSON.parse(localStorage.getItem("users")) || [];
 
             document.getElementById("form1").addEventListener("submit", (e) => {
                 e.preventDefault();
                 const email = document.getElementById("email").value;
                 const password = document.getElementById("password").value;
 
-                if (savedUser && email === savedUser.email && password === savedUser.password) {
+                const userf = users.find(user => user.email === email && user.password === password);
+
+                if (userf) {
                     alert("Login successful!");
                     window.location.href = "hello.html";
-
-                } else {
+                }
+                else {
                     alert("Invalid credentials");
                 }
+
             });
+
         </script>
         
     </body>
