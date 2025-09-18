@@ -41,16 +41,19 @@
             }
             button:hover{
                 background-color: rgb(138, 127, 113);
-                /* border-color: white; */
                 color: white;
             }
             a{
                 text-decoration: none;
                 color :blue;
             }
+            a:hover{
+                text-decoration: underline;
+            }
             form{
                 justify-items: center;
             }
+            
         </style>
     </head>
     <body>
@@ -58,14 +61,20 @@
             <form id="form1">
                 <br>
                 <h1>Login</h1><br>
-                <h1><label>Enter your Mail id  &nbsp;&nbsp;: </label><input type="email" placeholder="gdg@gmail.com" id="email"></h1>
-                <h1><label>Enter your Password : </label><input type="password" placeholder="******" id="password"></h1>
+                <h1><label>Enter your Mail id  &nbsp;&nbsp;: </label><input type="email" placeholder="gdg@gmail.com" id="email" required></h1>
+                <h1><label>Enter your Password : </label><input type="password" placeholder="******" id="password" required></h1>
                 <br>
                 <div class="button-class">
                     <button type="submit" id="submit">Submit</button>
-                </div><br>
+                    
+                </div>
+                <div>
+                    <h3><a href="forgot.html">Forgot Password ?</a></h3>
+                </div>
                 <h3>Do you have an account ? <a href="register.html">Register now</a></h3>
+                
             </form>
+            
         </div>
 
         <script>

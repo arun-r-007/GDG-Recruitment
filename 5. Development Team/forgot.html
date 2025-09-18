@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Forgot</title>
+        <style>
+
+            *{
+                font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            }
+            body {
+                
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .main{
+                height: 50%;
+                width: 40%;
+                border: solid 2px;
+                border-color:blueviolet;
+                border-radius: 15px;
+                padding: 20px;
+                justify-items: center;
+            }
+            input{
+                font-size: large;
+                width: 300px;
+            }
+            .button-class {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .button-class1 {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            button{
+                border-radius: 7px;
+                background-color: antiquewhite;
+                font-size: 20px;
+                width: 150px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(138, 127, 113);
+                color: white;
+            }
+            a{
+                text-decoration: none;
+                color :blue;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            form{
+                justify-items: center;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <form id="form3">
+                <br>
+                <h1>Forgot</h1><br>
+                <div id="email-block" style="display:block;">
+                    <h1><label>Enter your Mail id  &nbsp;&nbsp;: </label><input type="email" placeholder="gdg@gmail.com" id="email" required></h1>
+                    <br>
+                    <div class="button-class">
+                        <button type="submit" id="submit">Check</button>
+                        
+                    </div>
+                </div>
+
+                <div id="password-block" style="display:none;">
+                    <h2><label>New Password &nbsp;&nbsp;&nbsp;: </label>
+                        <input type="password" placeholder="******" id="password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"
+                        title="Password must be 8-15 characters long, include at least 1 uppercase, 1 lowercase, 1 number, and 1 special character." >
+                    </h2>
+                    <h2><label>Confirm Password : </label><input type="password" id="password2" placeholder="******" ></h2>
+                    <br>
+                    <div class="button-class1">
+                        <button type="button" id="resubmit">Reset Password</button>
+                    </div>
+                </div>
+
+                <br>
+                <h3>Already have an account ! <a href="index.html">Login now</a></h3>
+                <h3>Do you have an account ? <a href="register.html">Register now</a></h3>
+                
+            </form>
+
+            
+        </div>
+
+        <script>
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            var curu = null;
+
+            document.getElementById("form3").addEventListener("submit", (e) => {
+                e.preventDefault();
+                const email = document.getElementById("email").value;
+
+                const userf = users.find(user => user.email === email);
+
+                if (userf) {
+                    curu = userf;
+                    document.getElementById("password-block").style.display = "block";
+                    document.getElementById("email-block").style.display = "none";
+                }
+                else {
+                    alert("User Not Found");
+                }
+
+            });
+
+            document.getElementById("resubmit").addEventListener("click", () => {
+
+            const pass1 = document.getElementById("password1");
+            const pass2 = document.getElementById("password2").value;
+            
+            if (!pass1.checkValidity()) {
+                alert(pass1.title);
+                return;
+            }
+
+            if (pass1.value !== pass2) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            curu.password = pass1.value;
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Password updated successfully!");
+            window.location.href = "index.html";
+        });
+
+        </script>
+        
+    </body>
+
+</html>
