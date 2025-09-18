@@ -1,0 +1,20 @@
+<style>
+    *{
+        font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+     }
+</style>
+
+<h1 id="username"></h1>
+<h2>You have logged Successfully...</h2>
+
+<script>
+    const urlname = new URLSearchParams(window.location.search);
+    const username = urlname.get("name")
+
+    if (username){
+        document.getElementById("username").innerText = username ;
+    }
+    else {
+        document.getElementById("username").innerText = "Hello Guest !" ;
+    }
+</script>

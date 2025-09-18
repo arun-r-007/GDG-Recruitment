@@ -81,7 +81,7 @@
 
                 if (userf) {
                     alert("Login successful!");
-                    window.location.href = "hello.html";
+                    window.location.href = "hello.html?name=" + encodeURIComponent(userf.name);
                 }
                 else {
                     alert("Invalid credentials");
