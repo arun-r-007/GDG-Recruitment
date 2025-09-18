@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+
+            *{
+                font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            }
+            body {
+                
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .main{
+                height: 50%;
+                width: 40%;
+                border: solid 2px;
+                border-color:blueviolet;
+                border-radius: 15px;
+                padding: 20px;
+                justify-items: center;
+            }
+            input{
+                font-size: large;
+                width: 300px;
+            }
+            .button-class {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            button{
+                border-radius: 7px;
+                background-color: antiquewhite;
+                font-size: 20px;
+                width: 150px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(138, 127, 113);
+                /* border-color: white; */
+                color: white;
+            }
+            a{
+                text-decoration: none;
+                color :blue;
+            }
+            form{
+                justify-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <form id="form1">
+                <br>
+                <h1>Login</h1><br>
+                <h1><label>Enter your Mail id  &nbsp;&nbsp;: </label><input type="email" placeholder="gdg@gmail.com" id="email"></h1>
+                <h1><label>Enter your Password : </label><input type="password" placeholder="******" id="password"></h1>
+                <br>
+                <div class="button-class">
+                    <button type="submit" id="submit">Submit</button>
+                </div><br>
+                <h3>Do you have an account ? <a href="register.html">Register now</a></h3>
+            </form>
+        </div>
+
+        <script>
+
+            const savedUser = JSON.parse(localStorage.getItem("userData"));
+
+            document.getElementById("form1").addEventListener("submit", (e) => {
+                e.preventDefault();
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                if (savedUser && email === savedUser.email && password === savedUser.password) {
+                    alert("Login successful!");
+                    window.location.href = "hello.html";
+
+                } else {
+                    alert("Invalid credentials");
+                }
+            });
+        </script>
+        
+    </body>
+
+</html>

@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+
+            *{
+                font-family: 'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif;
+            }
+            body {
+                
+                margin: 0;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .main{
+                height: max-content;
+                width: 40%;
+                border: solid 2px;
+                border-color:rgb(43, 214, 226);
+                border-radius: 15px;
+                padding: 20px;
+                justify-items: center;
+            }
+            form{
+                justify-items: center;
+            }
+            input{
+                font-size: large;
+                width: 300px;
+            }
+            .button-class {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            button{
+                border-radius: 7px;
+                background-color: antiquewhite;
+                font-size: 20px;
+                width: 150px;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: rgb(138, 127, 113);
+                color: white;
+            }
+            a{
+                text-decoration: none;
+                color :blue;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <form id="form2">
+                <br>
+                <h1>Registration</h1><br>
+                <h1><label>Enter your Name &nbsp;&nbsp;&nbsp;&nbsp; : </label><input type="text" placeholder="Name" id="name" required></h1>
+                <h1><label>Enter your Mobile no&nbsp;&nbsp;: </label><input type="tel" placeholder="9876543210" id="number" pattern="[0-9]{10}" maxlength="10" required></h1>
+                <h1><label>Enter your Mail id  &nbsp;&nbsp;&nbsp;&nbsp;: </label><input type="email" placeholder="gdg@gmail.com" id="email" required></h1>
+                <h1><label>Enter your Password &nbsp;&nbsp;: </label><input type="password" placeholder="******" id="password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"
+        title="Password must be 8-15 characters long, include at least 1 uppercase, 1 lowercase, 1 number, and 1 special character." required></h1>
+                <h1><label>Confirm your Password : </label><input type="password" placeholder="******" id="password2" required></h1>
+                <br>
+                <div class="button-class">
+                    <button type="submit" id="submit">Register</button>
+                </div><br>
+                <h3>Already have an account ! <a href="index.html">Login now</a></h3>
+                <br>
+            </form>
+        </div>
+
+       <script>
+            const form = document.getElementById("form2");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const pass1 = document.getElementById("password1").value;
+                const pass2 = document.getElementById("password2").value;
+
+                if (pass1 !== pass2) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                const userData = {
+                    name: document.getElementById("name").value,
+                    mobile: document.getElementById("number").value,
+                    email: document.getElementById("email").value,
+                    password: pass1
+                };
+
+                console.log("User Registered:", userData);
+                
+                localStorage.setItem("userData", JSON.stringify(userData));
+
+                alert("Registration successful!");
+
+                form.reset();
+            });
+
+        </script>
+        
+    </body>
+
+</html>
