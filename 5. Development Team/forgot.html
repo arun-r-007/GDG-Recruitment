@@ -77,7 +77,7 @@
 
                 <div id="password-block" style="display:none;">
                     <h2><label>New Password &nbsp;&nbsp;&nbsp;: </label>
-                        <input type="password" placeholder="******" id="password1" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"
+                        <input type="password" placeholder="******" id="password1" minlength="8" maxlength="15" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,15}$"
                         title="Password must be 8-15 characters long, include at least 1 uppercase, 1 lowercase, 1 number, and 1 special character." >
                     </h2>
                     <h2><label>Confirm Password : </label><input type="password" id="password2" placeholder="******" ></h2>
