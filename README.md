@@ -10,12 +10,12 @@ Round 1 Hiring Process
 1. **Register**
 
    * User enters **Name, Email, and Password**.
-   * Data is saved into the browser’s **localStorage** as a JSON array of users.
+   * Data is saved into the browser’s **localstorage** as a JSON array of users.
 
 2. **Login**
 
    * User enters **Email and Password**.
-   * The script checks if the credentials match any user in localStorage.
+   * The script checks if the credentials match any user in localstorage.
    * If yes → Login successful → Redirects to **hello.html**.
    * If no → Shows “Invalid credentials”.
 
@@ -23,7 +23,7 @@ Round 1 Hiring Process
 
    * User enters registered **Email**.
    * If email exists → New Password + Confirm Password inputs are shown.
-   * After validation, the old password is updated in localStorage.
+   * After validation, the old password is updated in localstorage.
    * If email not found → “User not found” alert.
 
 4. **Hello Page**
@@ -37,7 +37,7 @@ When iam in the middle of this project, one of the biggest thing was **how to st
 
 my first idea is to store the data in json file **( records.json )** but java script can't directly store data in json local file
 
-so, i got a insight from web we can store data in current session but, it wont access by other pages.. , but later i got the real ans what it is ? we can store data in local storage , it can access till the browser session.. like **mini database inside the browser**
+so, i got a insight from web we can store data in current session but, it wont access by other pages.. , but later i got the real ans what it is ? we can store data in localstorage , it can access till the browser session.. like **mini database inside the browser**
 
 so i stored user's data in an array while registering and accessed while logging.. and etc...
 
