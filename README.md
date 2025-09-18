@@ -37,7 +37,7 @@ When iam in the middle of this project, one of the biggest thing was **how to st
 
 my first idea is to store the data in json file **( records.json )** but java script can't directly store data in json local file
 
-so, i got a insight from web we can store data in current session but, i wont access by other pages.. , but later i got the real ans what it is ? we can store data in local storage , it can access till the browser session.. like **mini database inside the browser**
+so, i got a insight from web we can store data in current session but, it wont access by other pages.. , but later i got the real ans what it is ? we can store data in local storage , it can access till the browser session.. like **mini database inside the browser**
 
 so i stored user's data in an array while registering and accessed while logging.. and etc...
 
@@ -46,14 +46,7 @@ so i stored user's data in an array while registering and accessed while logging
 * stored users as a **JSON array of objects**, it could handle multiple accounts.
 
 
-4. Slides
-in git and in drive
 
-
-5. Git-repo
-
-https://github.com/arun-r-007/GDG-Recruitment
-
-5. live Website
+# live Website
 
 https://arun-r-007.github.io/GDG-Recruitment/5.%20Development%20Team/index.html
