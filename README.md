@@ -1,23 +1,59 @@
 # GDG-Recruitment
 Round 1 Hiring Process
 
-4. Emerging Tech Team
-Task: Research one Google tech (AI/ML, Firebase, Cloud, Flutter, etc.) and prepare a
-2-slide explainer:
- What it is
- One idea on how GDG could use it in an event/project
 
-5. Development Team
-Task: Build a basic login/register page (frontend or backend, your choice).
-Bonus: Add one small feature (like forgot password, or simple validation).
+## 5. Development Team
 
-6. Finance & Management Team
-Task: Create a budget sheet for a one-day workshop (100 students) including snacks,
 
-printing, and logistics. Use Google Sheets/Excel.
+## How It Works
 
-And
+1. **Register**
 
-Draft a short sponsorship pitch mail to a local company/startup convincing them to
+   * User enters **Name, Email, and Password**.
+   * Data is saved into the browser’s **localStorage** as a JSON array of users.
 
-support a GDG event
+2. **Login**
+
+   * User enters **Email and Password**.
+   * The script checks if the credentials match any user in localStorage.
+   * If yes → Login successful → Redirects to **hello.html**.
+   * If no → Shows “Invalid credentials”.
+
+3. **Forgot Password**
+
+   * User enters registered **Email**.
+   * If email exists → New Password + Confirm Password inputs are shown.
+   * After validation, the old password is updated in localStorage.
+   * If email not found → “User not found” alert.
+
+4. **Hello Page**
+
+   * Displays a greeting using the **user’s name** passed through the URL.
+
+
+# what i met ?
+
+When iam in the middle of this project, one of the biggest thing was **how to store user data** without using database.
+
+my first idea is to store the data in json file **( records.json )** but java script can't directly store data in json local file
+
+so, i got a insight from web we can store data in current session but, i wont access by other pages.. , but later i got the real ans what it is ? we can store data in local storage , it can access till the browser session.. like **mini database inside the browser**
+
+so i stored user's data in an array while registering and accessed while logging.. and etc...
+
+* the data can store in  **key–value pairs**.
+* data **stays saved even after refreshing** the page.
+* stored users as a **JSON array of objects**, it could handle multiple accounts.
+
+
+4. Slides
+in git and in drive
+
+
+5. Git-repo
+
+https://github.com/arun-r-007/GDG-Recruitment
+
+5. live Website
+
+https://arun-r-007.github.io/GDG-Recruitment/5.%20Development%20Team/index.html
