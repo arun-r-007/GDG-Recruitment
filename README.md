@@ -2,6 +2,13 @@
 Round 1 Hiring Process
 
 
+## 4. Emerging Tech Team
+
+### uploaded in PDF and in PPT
+
+https://github.com/arun-r-007/GDG-Recruitment/tree/main/4.%20Emerging%20Tech%20Team
+
+
 ## 5. Development Team
 
 
